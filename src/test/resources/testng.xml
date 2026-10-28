@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Hybrid Automation - Full Regression" parallel="classes" thread-count="3">
+
+    <listeners>
+        <listener class-name="com.framework.listeners.TestListener"/>
+        <listener class-name="com.framework.listeners.RetryTransformer"/>
+    </listeners>
+
+    <test name="UI tests">
+        <packages>
+            <package name="com.framework.ui"/>
+        </packages>
+    </test>
+
+    <test name="API tests">
+        <packages>
+            <package name="com.framework.api"/>
+        </packages>
+    </test>
+
+</suite>

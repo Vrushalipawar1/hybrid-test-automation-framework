@@ -1,0 +1,11 @@
+# A Selenium Chrome browser in a container, so you don't need Chrome installed locally.
+#   docker compose up -d
+#   mvn test -Dexecution=remote -Dremote.url=http://localhost:4444/wd/hub -Dheadless=false
+# Watch the browser live at http://localhost:7900 (password: secret)
+services:
+  selenium:
+    image: selenium/standalone-chrome:latest
+    shm_size: 2gb
+    ports:
+      - "4444:4444"
+      - "7900:7900"
